@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" media="screen" href="style.css">
+    <title>homelight controller</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta charset ="UTF-8">
+    <meta name = "author" content = "Vladislav Povasaris">
+    <script>
+    var state1 = 0;
+    var state2 = 0;
+    var state3 = 0;
+    function ChangeLight1()
+    {
+      if (state1 == 1)
+      {
+      document.getElementById('circle1').style = "fill: " + document.getElementById("C_selector1").value + "; fill-opacity: " + document.getElementById("I_selector1").value + " ;";
+      document.getElementById('Capa_1').style = "fill-opacity: 0.1;";
+      }
+    }
+    function OnButton1()
+    {
+      state1 = 1;
+      ChangeLight1();
+      document.getElementById('circle1').style = "fill: " + document.getElementById("C_selector1").value + "; fill-opacity: " + document.getElementById("I_selector1").value + " ;";
+      document.getElementById('Capa_1').style = "fill-opacity: 0.1;";
+    }
+    function OffButton1()
+    {
+      state1 = 0;
+      document.getElementById('circle1').style = "fill: transparent;";
+      document.getElementById('Capa_1').style = "fill-opacity: 1;";
+    }
+    function ChangeLight2()
+    {
+      if (state2 == 1)
+      {
+      document.getElementById('circle2').style = "fill: " + document.getElementById("C_selector2").value + "; fill-opacity: " + document.getElementById("I_selector2").value + " ;";
+      document.getElementById('Capa_2').style = "fill-opacity: 0.1;";
+      }
+    }
+    function OnButton2()
+    {
+      state2 = 1;
+      ChangeLight2();
+      document.getElementById('circle2').style = "fill: " + document.getElementById("C_selector2").value + "; fill-opacity: " + document.getElementById("I_selector2").value + " ;";
+      document.getElementById('Capa_2').style = "fill-opacity: 0.1;";
+    }
+    function OffButton2()
+    {
+      state2 = 0;
+      document.getElementById('circle2').style = "fill: transparent;";
+      document.getElementById('Capa_2').style = "fill-opacity: 1;";
+
+    }
+    function ChangeLight3()
+    {
+      if (state3 == 1)
+      {
+      document.getElementById('circle3').style = "fill: " + document.getElementById("C_selector3").value + "; fill-opacity: " + document.getElementById("I_selector3").value + " ;";
+      document.getElementById('Capa_3').style = "fill-opacity: 0.1;";
+      }
+    }
+    function OnButton3()
+    {
+      state3 = 1;
+      ChangeLight3();
+      document.getElementById('circle3').style = "fill: " + document.getElementById("C_selector3").value + "; fill-opacity: " + document.getElementById("I_selector3").value + " ;";
+      document.getElementById('Capa_3').style = "fill-opacity: 0.1;";
+    }
+    function OffButton3()
+    {
+      state3 = 0;
+      document.getElementById('circle3').style = "fill: transparent;";
+      document.getElementById('Capa_3').style = "fill-opacity: 1;";
+    }
+    </script>
+  </head>
+<body>
+  <div class =whole_ui>
+<div class ="container">
+  <div class = "UI_block">
+<div class = "back">
+  <div class = "lamp">
+  <svg version="1.1" class ="lamp" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	 width="400px" height="400px" viewBox="0 0 565.489 565.489" style="enable-background:new 0 0 565.489 565.489;"
+  	 xml:space="preserve">
+  <g>
+  	<g>
+  		<path d="M214.936,433.36c0,0,0.718,7.918,0.707,23.985h-0.707v26.413l139.88-15.483c-0.129-4.379-0.222-7.776-0.269-9.552
+  			c-0.397-14.444-0.421-21.252-0.292-24.312c0.14-0.374,0.245-0.677,0.408-1.052h0.164c0,0-0.023-0.163-0.047-0.314
+  			c21.836-56.155,96.499-215.945,96.499-264.521C451.256,75.609,375.659,0,282.739,0c-92.921,0-168.53,75.609-168.53,168.524
+  			c0,55.367,77.291,208.121,101.065,264.836H214.936z M282.739,23.915c79.749,0,144.627,64.866,144.627,144.609
+  			c0,41.051-67.891,187.043-97.691,263.085l-88.763,1.005c-31.389-74.057-102.788-216.628-102.788-264.09
+  			C138.124,88.781,202.99,23.915,282.739,23.915z"/>
+  		<path d="M214.936,509.788c-0.572,0.396-1.051,6.865,1.354,15.215l137.989-15.285c0.046-0.992,0.104-1.857,0.222-2.499
+  			c0.514-3.258,0.678-10.451,0.654-18.38l-140.219,15.543V509.788z"/>
+  		<path d="M286.23,565.487c45.71,0.223,60.423-18.345,65.327-34.844l-124.46,13.802C237.215,555.655,254.982,565.334,286.23,565
+  			z"/>
+  	</g>
+  </g>
+  </svg>
+</div>
+</div>
+
+<div class="controls_container">
+  <div class ="Title">
+    <h1>LIVING ROOM<h1>
+  </div>
+  <div class ="Color_change">
+  <input type="color" id="C_selector1" name="color_selector" class ="color_selector" value="#ffffff" onchange="ChangeLight1()">
+  <div class = "c_labels">
+    <label class = "c_selector">COLOR</label>
+    <label class = "c_selector">SELECTION</label>
+  </div>
+  </div>
+  <div class ="Brightness_change">
+    <input type="range" id ="I_selector1" class ="slider" min="0" max="1" step="0.01" value="1" onchange="ChangeLight1()">
+    <div class = "B_selection">
+    <label class = "B_label">BRIGHTNESS SELECTION</label>
+  </div>
+  </div>
+  <div class = "Buttons">
+    <input type="button" id= "Switch1" class="Switch1" value="ON" onclick="OnButton1()">
+    <input type="button" id= "Switch2" class= "Switch2" value="OFF"onclick="OffButton1()">
+    <p></p>
+  </div>
+</div>
+<div class = "Pic1">
+  <img src="https://i.ibb.co/mTqCfmG/livingroom.png" width="800" height="600">
+</div>
+<div class ="circle_place">
+  <svg height="600" width="800">
+   <circle class ="circle1" id = "circle1" cx="204" cy="230" r="300" style="fill: transparent; fill-opacity: 1"/>
+</svg>
+</div>
+</div>
+</div>
+
+
+<div class ="container2">
+  <div class = "UI_block">
+<div class = "back">
+  <div class = "lamp">
+  <svg version="1.1" class ="lamp" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	 width="400px" height="400px" viewBox="0 0 565.489 565.489" style="enable-background:new 0 0 565.489 565.489;"
+  	 xml:space="preserve">
+  <g>
+  	<g>
+  		<path d="M214.936,433.36c0,0,0.718,7.918,0.707,23.985h-0.707v26.413l139.88-15.483c-0.129-4.379-0.222-7.776-0.269-9.552
+  			c-0.397-14.444-0.421-21.252-0.292-24.312c0.14-0.374,0.245-0.677,0.408-1.052h0.164c0,0-0.023-0.163-0.047-0.314
+  			c21.836-56.155,96.499-215.945,96.499-264.521C451.256,75.609,375.659,0,282.739,0c-92.921,0-168.53,75.609-168.53,168.524
+  			c0,55.367,77.291,208.121,101.065,264.836H214.936z M282.739,23.915c79.749,0,144.627,64.866,144.627,144.609
+  			c0,41.051-67.891,187.043-97.691,263.085l-88.763,1.005c-31.389-74.057-102.788-216.628-102.788-264.09
+  			C138.124,88.781,202.99,23.915,282.739,23.915z"/>
+  		<path d="M214.936,509.788c-0.572,0.396-1.051,6.865,1.354,15.215l137.989-15.285c0.046-0.992,0.104-1.857,0.222-2.499
+  			c0.514-3.258,0.678-10.451,0.654-18.38l-140.219,15.543V509.788z"/>
+  		<path d="M286.23,565.487c45.71,0.223,60.423-18.345,65.327-34.844l-124.46,13.802C237.215,555.655,254.982,565.334,286.23,565
+  			z"/>
+  	</g>
+  </g>
+  </svg>
+</div>
+</div>
+
+<div class="controls_container">
+  <div class ="Title">
+    <h1>KITCHEN<h1>
+  </div>
+  <div class ="Color_change">
+  <input type="color" id="C_selector2" name="color_selector" class ="color_selector" value="#ffffff" onchange="ChangeLight2()">
+  <div class = "c_labels">
+    <label class = "c_selector">COLOR</label>
+    <label class = "c_selector">SELECTION</label>
+  </div>
+  </div>
+  <div class ="Brightness_change">
+    <input type="range" id ="I_selector2" class ="slider" min="0" max="1" step="0.01" value="1" onchange="ChangeLight2()">
+    <div class = "B_selection">
+    <label class = "B_label">BRIGHTNESS SELECTION</label>
+  </div>
+  </div>
+  <div class = "Buttons">
+    <input type="button" id= "Switch3" class="Switch3" value="ON" onclick="OnButton2()">
+    <input type="button" id= "Switch4" class= "Switch4" value="OFF"onclick="OffButton2()">
+    <p></p>
+  </div>
+</div>
+<div class = "Pic1">
+  <img src="https://i.ibb.co/RQvjBpr/kitchen.png" width="800" height="600">
+</div>
+<div class ="circle_place">
+  <svg height="600" width="800">
+   <circle class ="circle1" id = "circle2" cx="204" cy="230" r="300" style="fill: transparent; fill-opacity: 1"/>
+</svg>
+</div>
+</div>
+</div>
+
+
+<div class ="container3">
+  <div class = "UI_block">
+<div class = "back">
+  <div class = "lamp">
+  <svg version="1.1" class ="lamp" id="Capa_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	 width="400px" height="400px" viewBox="0 0 565.489 565.489" style="enable-background:new 0 0 565.489 565.489;"
+  	 xml:space="preserve">
+  <g>
+  	<g>
+  		<path d="M214.936,433.36c0,0,0.718,7.918,0.707,23.985h-0.707v26.413l139.88-15.483c-0.129-4.379-0.222-7.776-0.269-9.552
+  			c-0.397-14.444-0.421-21.252-0.292-24.312c0.14-0.374,0.245-0.677,0.408-1.052h0.164c0,0-0.023-0.163-0.047-0.314
+  			c21.836-56.155,96.499-215.945,96.499-264.521C451.256,75.609,375.659,0,282.739,0c-92.921,0-168.53,75.609-168.53,168.524
+  			c0,55.367,77.291,208.121,101.065,264.836H214.936z M282.739,23.915c79.749,0,144.627,64.866,144.627,144.609
+  			c0,41.051-67.891,187.043-97.691,263.085l-88.763,1.005c-31.389-74.057-102.788-216.628-102.788-264.09
+  			C138.124,88.781,202.99,23.915,282.739,23.915z"/>
+  		<path d="M214.936,509.788c-0.572,0.396-1.051,6.865,1.354,15.215l137.989-15.285c0.046-0.992,0.104-1.857,0.222-2.499
+  			c0.514-3.258,0.678-10.451,0.654-18.38l-140.219,15.543V509.788z"/>
+  		<path d="M286.23,565.487c45.71,0.223,60.423-18.345,65.327-34.844l-124.46,13.802C237.215,555.655,254.982,565.334,286.23,565
+  			z"/>
+  	</g>
+  </g>
+  </svg>
+</div>
+</div>
+
+<div class="controls_container">
+  <div class ="Title">
+    <h1>BATHROOM<h1>
+  </div>
+  <div class ="Color_change">
+  <input type="color" id="C_selector3" name="color_selector" class ="color_selector" value="#ffffff" onchange="ChangeLight3()">
+  <div class = "c_labels">
+    <label class = "c_selector">COLOR</label>
+    <label class = "c_selector">SELECTION</label>
+  </div>
+  </div>
+  <div class ="Brightness_change">
+    <input type="range" id ="I_selector3" class ="slider" min="0" max="1" step="0.01" value="1" onchange="ChangeLight3()">
+    <div class = "B_selection">
+    <label class = "B_label">BRIGHTNESS SELECTION</label>
+  </div>
+  </div>
+  <div class = "Buttons">
+    <input type="button" id= "Switch5" class="Switch5" value="ON" onclick="OnButton3()">
+    <input type="button" id= "Switch6" class= "Switch6" value="OFF"onclick="OffButton3()">
+    <p></p>
+  </div>
+</div>
+<div class = "Pic1">
+  <img src="https://i.ibb.co/dfQjt7H/bathroom.png" width="800" height="600">
+</div>
+<div class ="circle_place">
+  <svg height="600" width="800">
+   <circle class ="circle1" id = "circle3" cx="204" cy="230" r="300" style="fill: transparent; fill-opacity: 1"/>
+</svg>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
